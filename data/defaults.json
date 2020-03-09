@@ -1,12 +1,13 @@
 {
-  "architecture": "amd64",
-  "debian_mirror": "http://deb.debian.org/debian",
-  "debian_security_mirror": "http://deb.debian.org/debian-security",
+  "architecture": "arm64",
+  "debian_mirror": "http://mirrors.tuna.tsinghua.edu.cn/debian",
+  "debian_security_mirror": "http://mirrors.tuna.tsinghua.edu.cn/debian-security",
   "debian_distribution": "buster",
   "vyos_mirror": "http://dev.packages.vyos.net/repositories/current",
   "vyos_branch": "current",
-  "kernel_version": "4.19.91",
-  "kernel_flavor": "amd64-vyos",
-  "additional_repositories": [],
+  "kernel_version": "4.9.0-12",
+  "kernel_flavor": "arm64",
+  "additional_repositories": [
+  ],
   "custom_packages": []
 }

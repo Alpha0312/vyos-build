@@ -57,7 +57,7 @@ lb config noauto \
         --firmware-binary false \
         --updates true \
         --security true \
-        --apt-options "--yes -oAPT::Default-Release="current" -oAPT::Get::allow-downgrades=true" \
+        --apt-options "--yes -oAPT::Get::allow-downgrades=true -oAPT::Get::AllowUnauthenticated=true -oAcquire::AllowInsecureRepositories=1" \
         --apt-indices false
         "${@}"
 """
@@ -69,7 +69,7 @@ debug = build_config['debug']
 
 # Add the additional repositories to package lists
 print("Setting up additional APT entries")
-vyos_repo_entry = "deb {0} {1} main\n".format(build_config['vyos_mirror'], build_config['vyos_branch'])
+vyos_repo_entry = "deb [trusted=yes] {0}/ {1}/\n".format(build_config['vyos_mirror'], build_config['vyos_branch'])
 
 apt_file = os.path.join(build_config['build_dir'], defaults.VYOS_REPO_FILE)
 
